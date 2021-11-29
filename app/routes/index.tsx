@@ -1,8 +1,5 @@
 import type {MetaFunction} from "remix";
 
-
-
-
 export let meta: MetaFunction = () => {
   return {
     title: "Remix Starter",
