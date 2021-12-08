@@ -1,102 +1,122 @@
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  useCatch
-} from "remix";
+import { Links, LiveReload, Meta, Outlet, Scripts, useCatch } from 'remix'
 
-import styles from "./tailwind.css";
-
+import styles from './tailwind.css'
+import tailwindstyles from './styles/tailwind.css'
 
 export function links() {
-  return [{rel: "stylesheet", href: styles}, {rel: "preconnect", href: "https://fonts.gstatic.com"}, {rel: "preconnect", href: "https://fonts.googleapis.com"}, {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap"}];
+    return [
+        { rel: 'stylesheet', href: styles },
+        { rel: 'stylesheet', href: tailwindstyles },
+        {
+            rel: 'preload',
+            href: '/fonts/Inter-Medium.ttf',
+            as: 'font',
+            type: 'font/ttf',
+            crossOrigin: 'anonymous',
+        },
+        {
+            rel: 'preload',
+            href: '/fonts/Inter-Light.ttf',
+            as: 'font',
+            type: 'font/ttf',
+            crossOrigin: 'anonymous',
+        },
+        {
+            rel: 'preload',
+            href: '/fonts/Inter-Bold.ttf',
+            as: 'font',
+            type: 'font/ttf',
+            crossOrigin: 'anonymous',
+        },
+    ]
 }
-
 
 export default function App() {
-  return (
-    <Document>
-      <Outlet />
-    </Document>
-  );
+    return (
+        <Document>
+            <Outlet />
+        </Document>
+    )
 }
 
-export function ErrorBoundary({error}: {error: Error}) {
-  console.error(error);
-  return (
-    <Document title="Error!">
-      <div>
-        <h1>There was an error</h1>
-        <p>{error.message}</p>
-        <hr />
-        <p>
-          Hey, developer, you should replace this with what you want your
-          users to see.
-        </p>
-      </div>
-    </Document>
-  );
+export function ErrorBoundary({ error }: { error: Error }) {
+    console.error(error)
+    return (
+        <Document title="Error!">
+            <div>
+                <h1>There was an error</h1>
+                <p>{error.message}</p>
+                <hr />
+                <p>
+                    Hey, developer, you should replace this with what you want
+                    your users to see.
+                </p>
+            </div>
+        </Document>
+    )
 }
 
 export function CatchBoundary() {
-  let caught = useCatch();
+    let caught = useCatch()
 
-  let message;
+    let message
 
-  switch (caught.status) {
-    case 401:
-      message = (
-        <p>
-          Oops! Looks like you tried to visit a page that you do not have access
-          to.
-        </p>
-      );
-      break;
-    case 404:
-      message = (
-        <p>Oops! Looks like you tried to visit a page that does not exist.</p>
-      );
-      break;
+    switch (caught.status) {
+        case 401:
+            message = (
+                <p>
+                    Oops! Looks like you tried to visit a page that you do not
+                    have access to.
+                </p>
+            )
+            break
+        case 404:
+            message = (
+                <p>
+                    Oops! Looks like you tried to visit a page that does not
+                    exist.
+                </p>
+            )
+            break
 
-    default:
-      throw new Error(caught.data || caught.statusText);
-  }
+        default:
+            throw new Error(caught.data || caught.statusText)
+    }
 
-  return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
-      <h1>
-        {caught.status}: {caught.statusText}
-      </h1>
-      <div>{message}</div>
-    </Document>
-  );
+    return (
+        <Document title={`${caught.status} ${caught.statusText}`}>
+            <h1>
+                {caught.status}: {caught.statusText}
+            </h1>
+            <div>{message}</div>
+        </Document>
+    )
 }
 
 function Document({
-  children,
-  title
+    children,
+    title,
 }: {
-  children: React.ReactNode;
-  title?: string;
+    children: React.ReactNode
+    title?: string
 }) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        {title ? <title>{title}</title> : null}
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <head>
+                <meta charSet="utf-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width,initial-scale=1"
+                />
+                {title ? <title>{title}</title> : null}
+                <Meta />
+                <Links />
+            </head>
+            <body>
+                {children}
+                <Scripts />
+                {process.env.NODE_ENV === 'development' && <LiveReload />}
+            </body>
+        </html>
+    )
 }
-
-

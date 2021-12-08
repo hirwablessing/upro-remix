@@ -1,34 +1,40 @@
 {
-  "private": true,
-  "name": "remix-app-template",
-  "description": "",
-  "license": "",
-  "scripts": {
-    "build": "npm run build:css && remix build",
-    "build:css": "tailwindcss -o ./app/tailwind.css",
-    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
-    "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
-    "postinstall": "remix setup node",
-    "start": "remix-serve build"
-  },
-  "dependencies": {
-    "@remix-run/react": "^1.0.6",
-    "@remix-run/serve": "^1.0.6",
-    "@remix-run/vercel": "^1.0.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "remix": "^1.0.6"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "^1.0.6",
-    "@types/react": "^17.0.24",
-    "@types/react-dom": "^17.0.9",
-    "concurrently": "^6.4.0",
-    "tailwindcss": "^2.2.19",
-    "typescript": "^4.1.2"
-  },
-  "engines": {
-    "node": ">=14"
-  },
-  "sideEffects": false
+    "private": true,
+    "name": "remix-app-template",
+    "description": "",
+    "license": "",
+    "scripts": {
+        "build": "npm run build:css && remix build",
+        "build:css": "tailwindcss -o ./app/tailwind.css",
+        "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+        "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
+        "postinstall": "remix setup node",
+        "start": "remix-serve build",
+        "format": "prettier --write './app/*.{js,jsx,ts,tsx,json}' './app/styles/*.css' --config ./.prettierrc --loglevel=error",
+        "prepare": "husky install",
+        "prettyquick": "prettyquick --staged"
+    },
+    "dependencies": {
+        "@remix-run/react": "^1.0.6",
+        "@remix-run/serve": "^1.0.6",
+        "@remix-run/vercel": "^1.0.6",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "remix": "^1.0.6"
+    },
+    "devDependencies": {
+        "@remix-run/dev": "^1.0.6",
+        "@types/react": "^17.0.24",
+        "@types/react-dom": "^17.0.9",
+        "concurrently": "^6.4.0",
+        "husky": "^7.0.0",
+        "prettier": "^2.5.1",
+        "pretty-quick": "^3.1.1",
+        "tailwindcss": "^2.2.19",
+        "typescript": "^4.1.2"
+    },
+    "engines": {
+        "node": ">=14"
+    },
+    "sideEffects": false
 }
