@@ -12,7 +12,7 @@
         "start": "remix-serve build",
         "format": "prettier --write './app/*.{js,jsx,ts,tsx,json}' './app/styles/*.css' --config ./.prettierrc --loglevel=error",
         "prepare": "husky install",
-        "prettyquick": "prettyquick --staged"
+        "prettyquick": "pretty-quick --staged"
     },
     "dependencies": {
         "@remix-run/react": "^1.0.6",
@@ -30,7 +30,7 @@
         "husky": "^7.0.0",
         "prettier": "^2.5.1",
         "pretty-quick": "^3.1.1",
-        "tailwindcss": "^2.2.19",
+        "tailwindcss": "^3.0.1",
         "typescript": "^4.1.2"
     },
     "engines": {

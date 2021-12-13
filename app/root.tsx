@@ -5,29 +5,8 @@ import tailwindstyles from './styles/tailwind.css'
 
 export function links() {
     return [
-        { rel: 'stylesheet', href: styles },
         { rel: 'stylesheet', href: tailwindstyles },
-        {
-            rel: 'preload',
-            href: '/fonts/Inter-Medium.ttf',
-            as: 'font',
-            type: 'font/ttf',
-            crossOrigin: 'anonymous',
-        },
-        {
-            rel: 'preload',
-            href: '/fonts/Inter-Light.ttf',
-            as: 'font',
-            type: 'font/ttf',
-            crossOrigin: 'anonymous',
-        },
-        {
-            rel: 'preload',
-            href: '/fonts/Inter-Bold.ttf',
-            as: 'font',
-            type: 'font/ttf',
-            crossOrigin: 'anonymous',
-        },
+        { rel: 'stylesheet', href: styles },
     ]
 }
 
