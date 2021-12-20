@@ -1,10 +1,6 @@
 module.exports = {
-    content: ['./app/**/*.{ts,tsx}'],
-    darkMode: 'media', // or 'media' or 'class'
+    content: ['./app/**/*.tsx'],
     theme: {
-        fontFamily: {
-            display: ['Inter', 'sans-serif'],
-        },
         extend: {},
     },
     variants: {},
