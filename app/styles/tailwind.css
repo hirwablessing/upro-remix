@@ -6,5 +6,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
-    src: url('/fonts/Inter-Medium.ttf') format('ttf');
+    src: url('/fonts/Inter-Medium.ttf') format('ttf')
+        url('/fonts/Inter-Regular.ttf') format('ttf')
+        url('/fonts/Inter-Bold.ttf') format('ttf') url('/fonts/Inter-Light.ttf')
+        format('ttf');
 }

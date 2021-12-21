@@ -10,7 +10,7 @@ export let meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <div className="bg-black flex justify-center flex-col items-center h-screen w-screen bg-black text-white font-display">
+        <div className="bg-black flex justify-center flex-col items-center h-screen w-screen font-primary text-white font-display">
             <h1 className="text-xl py-4 font-display">
                 {' '}
                 Remix Starter and tailwindcss
