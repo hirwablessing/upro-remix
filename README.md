@@ -1,3 +1,3 @@
 ## upro-remix
 
-Starter template for remix applications 
+Starter template for remix applications

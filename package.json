@@ -10,7 +10,8 @@
         "dev:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --watch",
         "postinstall": "remix setup node",
         "start": "remix-serve build",
-        "format": "prettier --write './app/*.{js,jsx,ts,tsx,json}' './app/styles/*.css' './package.json' --config ./.prettierrc --loglevel=error",
+        "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+        "lint": "pnpm format && eslint --ignore-path .gitignore .",
         "prepare": "husky install",
         "prettyquick": "pretty-quick --staged"
     },
@@ -24,9 +25,11 @@
     },
     "devDependencies": {
         "@remix-run/dev": "^1.1.1",
+        "@remix-run/eslint-config": "^1.1.1",
         "@types/react": "^17.0.37",
         "@types/react-dom": "^17.0.11",
         "concurrently": "^6.5.1",
+        "eslint": "^8.5.0",
         "husky": "^7.0.4",
         "prettier": "^2.5.1",
         "pretty-quick": "^3.1.2",
