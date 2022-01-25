@@ -10,8 +10,8 @@ export let meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <div className="bg-black flex justify-center flex-col items-center h-screen w-screen font-primary text-white font-display">
-            <h1 className="text-xl py-4 font-display">
+        <div className="font-display flex h-screen w-screen flex-col items-center justify-center bg-black font-primary text-white">
+            <h1 className="font-display py-4 text-xl">
                 {' '}
                 Remix Starter and tailwindcss
             </h1>

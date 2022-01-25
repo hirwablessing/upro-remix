@@ -10,8 +10,8 @@ export let meta: MetaFunction = () => {
 
 export default function AboutRoute() {
     return (
-        <section className="flex bg-black text-white font-display  flex-col justify-center items-center h-screen w-screen font-primary">
-            <h1 className="text-xl py-4">About</h1>
+        <section className="font-display flex h-screen w-screen  flex-col items-center justify-center bg-black font-primary text-white">
+            <h1 className="py-4 text-xl">About</h1>
             <Link to="/" className="text-blue-500">
                 👈 back
             </Link>
