@@ -1,5 +1,5 @@
 module.exports = {
-    content: ['./app/**/*.tsx'],
+    content: ['./app/**/*.{ts,tsx,jsx,js}'],
     theme: {
         fontFamily: {
             primary: ['Inter', 'sans-serif'],
